@@ -1,5 +1,5 @@
-fruit-search
-<h1>{{ query || 'Search:' }}</h1>
+<h1>Search</h1>
 <input type="text" ng-model="query">
-
-<div ng-hide="queryIsEmpty()">test</div>
+<ul ng-hide="queryIsEmpty()">
+	<li ng-repeat="food in fruit | filter:query">{{ food }}</li>
+</ul>

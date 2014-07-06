@@ -3,8 +3,10 @@ app.controller('fruitOrNotController', ['$scope', '$http',
 		$http.defaults.transformResponse = [];
 
 		$http.get('json/foods.json').success(function(data) {
-			$scope.fruitList = data['fruit'];
-			$scope.vegetableList = data['vegetable'];
+			lists = JSON.parse(data)
+			$scope.fruitList = lists['fruit'];
+			$scope.vegetableList = lists['vegetable'];
+			$scope.allFood = $scope.fruitList.concat($scope.vegetableList)
 		});
 
 		$scope.queryIsEmpty = function() {
