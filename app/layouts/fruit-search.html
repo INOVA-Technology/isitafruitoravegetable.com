@@ -1,5 +1,6 @@
 <h1>Search</h1>
 <input type="text" ng-model="query">
+<a href="#/{{ query }}">Search!</a>
 <ul ng-hide="queryIsEmpty()">
 	<li ng-repeat="food in allFood | filter:query">{{ food }}</li>
 </ul>
